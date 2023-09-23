@@ -1,0 +1,58 @@
+
+
+<div class="container custom-container p-5 mb-5">
+  <div class="text-center mb-2">
+    <button class="btn btn-secondary m-1" (click)="showRegistrationForm()">Admin Registration</button>
+    <button class="btn btn-secondary m-1" (click)="showLoginForm()">Admin Login</button>
+  </div>
+  <!-- Registration Form -->
+  <ng-container *ngIf="showRegistration">
+    <div class="form-container shadow p-4">
+      <h2 class="text-center">Admin Registration</h2>
+      <form (submit)="registerAdmin()">
+        <div class="form-group">
+          <label for="userName">Username:</label>
+          <input type="text" id="userName" [(ngModel)]="admin.userName" name="userName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="emailId">Email:</label>
+          <input type="email" id="emailId" [(ngModel)]="admin.emailId" name="emailId" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="phoneNo">Phone:</label>
+          <input type="text" id="phoneNo" [(ngModel)]="admin.phoneNo" name="phoneNo" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" [(ngModel)]="admin.password" name="password" class="form-control"
+            required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-secondary mt-1">Register</button>
+        </div>
+      </form>
+    </div>
+  </ng-container>
+
+  <!-- Login Form -->
+  <ng-container *ngIf="showLogin">
+    <div class="form-container shadow p-4">
+      <h2 class="text-center">Admin Login</h2>
+      <form (submit)="loginAdmin()">
+        <div class="form-group mb-5">
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" [(ngModel)]="loginAdminData.emailId" name="emailId" class="form-control"
+            required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" [(ngModel)]="loginAdminData.password" name="password"
+            class="form-control" required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-secondary mt-1">Login</button>
+        </div>
+      </form>
+    </div>
+  </ng-container>
+</div>

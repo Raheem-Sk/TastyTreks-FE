@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f2f2; /* Change this to your desired background color */
+  padding: 10px 20px;
+  color: #101010; /* Change this to your desired text color */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.nav-links a {
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
