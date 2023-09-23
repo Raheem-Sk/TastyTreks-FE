@@ -1,0 +1,81 @@
+
+/* Add these styles to your component's CSS file or global stylesheet */
+
+/* Style for the core heading */
+.core-heading {
+  font-size: 24px;
+  color: #4caf50; /* Light green color */
+  margin-bottom: 20px;
+}
+
+
+/* Style for the payment container */
+.payment-container {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+
+/* Style for the Wallet Balance heading */
+.payment-container h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+
+/* Style for the Recharge Wallet button */
+.recharge-button {
+  background-color: #4caf50; /* Light green color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+
+/* Style for the Payment Amount label */
+.payment-label {
+  font-size: 16px;
+  color: #333;
+}
+
+
+/* Style for the Payment Amount input */
+.payment-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+
+/* Style for the Make Payment button */
+.payment-button {
+  background-color: #2196F3; /* Blue color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Style for the Payment Status message */
+.payment-status {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
