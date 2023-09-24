@@ -1,9 +1,12 @@
 <div class="payment-container">
+
   <h2>Wallet Balance: {{ walletBalance }}</h2>
   <button class="recharge-button" (click)="rechargeWallet(50)">Recharge Wallet (Add $50)</button>
   <br />
   <label class="payment-label" for="paymentAmount">Payment Amount:</label>
   <input class="payment-input" type="number" id="paymentAmount" [(ngModel)]="paymentAmount" />
   <button class="payment-button" (click)="makePayment()">Make Payment</button>
-  <div class="payment-status" *ngIf="paymentStatus">{{ paymentStatus }}</div>
+  <div class="payment-summary" *ngIf="paymentStatus">
+    Payment Confirmed. Redirecting to Dashboard...
+  </div>
 </div>

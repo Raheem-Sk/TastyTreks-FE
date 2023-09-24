@@ -1,4 +1,4 @@
-.logo{
+/* .logo{
   position:relative;
   top: 8px;
   height: 10px;
@@ -25,7 +25,7 @@
 
 hr{
   margin: 0;
-}
+} */
 .prodLogo{
   position: relative;
   top: 20px;
@@ -33,7 +33,7 @@ hr{
   font-weight: bold;
 }
 
-
+/*
 .AddProd{
   margin: 10px;
 }
@@ -61,4 +61,4 @@ p{
 
 th{
   text-align: center;
-}
+} */

@@ -1,5 +1,4 @@
-
-
+<app-header></app-header>
 <div class="container custom-container p-5 mb-5">
   <div class="text-center mb-2">
     <button class="btn btn-secondary m-1" (click)="showRegistrationForm()">Admin Registration</button>
@@ -28,7 +27,7 @@
             required>
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-secondary mt-1">Register</button>
+          <button type="submit" class="btn btn-secondary mt-1" (click)="showLoginForm()">Register</button>
         </div>
       </form>
     </div>
@@ -50,9 +49,10 @@
             class="form-control" required>
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-secondary mt-1">Login</button>
+          <button type="submit" class="btn btn-secondary mt-1" routerLink="/admindashboard">Login</button>
         </div>
       </form>
     </div>
   </ng-container>
 </div>
+<app-footer></app-footer>

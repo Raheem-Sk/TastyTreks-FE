@@ -5,6 +5,9 @@ import { UserLoginComponent } from './Components/user-login/user-login.component
 import { AdminComponent } from './Components/admin/admin.component';
 import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { AdminDashboardComponent } from './Components/admindashboard/admindashboard.component';
+import { AddProductComponent } from './Components/addproduct/addproduct.component';
+import { UpdateProductComponent } from './Components/updateproduct/updateproduct.component';
 
 
 const routes: Routes = [
@@ -12,7 +15,11 @@ const routes: Routes = [
   {path : 'userhome', component: UserDashboardComponent},
   { path: 'login', component: UserLoginComponent },
   { path: 'admin', component: AdminComponent },
-  { path: '', redirectTo: 'header', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path: 'admindashboard' , component:AdminDashboardComponent},
+  {path: 'addproduct' , component:AddProductComponent},
+  {path: 'updateproduct/:id' , component:UpdateProductComponent},
+
   {path:'header', component: HeaderComponent}
 ];
 

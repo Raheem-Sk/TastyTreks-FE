@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 
@@ -9,7 +9,7 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent implements OnInit {
-  products : any
+  @Input() products : any;
 
   key:string=''
   constructor(private router:Router , private service:UserService){}
@@ -29,9 +29,6 @@ export class UserDashboardComponent implements OnInit {
     let response = this.service.getproducts();
     response.subscribe((data:any)=>this.products=data);
   }
-
-
-
 
 
   public india(){

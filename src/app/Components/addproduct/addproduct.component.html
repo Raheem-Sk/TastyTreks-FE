@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-body">
+      <div class="text-center">
+      <h2 class="card-title">Add Product</h2>
+    </div>
+      <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Product Name:</label>
+              <input type="text" id="name" name="name" [(ngModel)]="product.name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="cuisines">Cuisines:</label>
+              <input type="text" id="cuisines" name="cuisines" [(ngModel)]="product.cuisines" class="form-control"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea id="description" name="description" [(ngModel)]="product.description" class="form-control"
+                required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input type="number" id="price" name="price" [(ngModel)]="product.price" class="form-control" required>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="offers">Offers:</label>
+              <input type="number" id="offers" name="offers" [(ngModel)]="product.offers" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="avail">Availability:</label>
+              <input type="text" id="avail" name="avail" [(ngModel)]="product.avail" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="imagepath">Image Path:</label>
+              <input type="text" id="imagepath" name="imagepath" [(ngModel)]="product.imagepath" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="text-center m-3">
+          <button type="submit" class="btn btn-secondary" >Add Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
