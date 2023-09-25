@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductService } from 'src/app/Services/product.service';
 import { WalletService } from 'src/app/Services/wallet.service';
 
 @Component({
@@ -8,14 +10,19 @@ import { WalletService } from 'src/app/Services/wallet.service';
 })
 export class PaymentGatewayComponent implements OnInit {
   walletBalance: number = 0;
-  paymentAmount: number = 0;
+  paymentAmount: any;
   paymentStatus: string = '';
+  product: any;
 
-  constructor(private walletService: WalletService) {}
-
+  constructor(private walletService: WalletService,private route:ActivatedRoute,private service:ProductService) {}
+  
   ngOnInit() {
     // Initialize wallet balance from the service
     this.walletBalance = this.walletService.getBalance();
+    this.route.paramMap.subscribe(params =>{
+      this.paymentAmount=params.get('gtotal');
+
+    })
   }
 
   rechargeWallet(amount: number): void {

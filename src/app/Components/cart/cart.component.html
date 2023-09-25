@@ -33,6 +33,6 @@
       Grand Total: {{ calculateGrandTotal()  }}
     </div>
   </div>
-  <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+  <button class="btn btn-primary" (click)="checkout(calculateGrandTotal())">Checkout</button>
   <button class="btn btn-danger" (click)="emptyCart()">Empty Cart</button>
 </div>

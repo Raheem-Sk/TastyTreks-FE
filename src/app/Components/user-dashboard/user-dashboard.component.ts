@@ -1,3 +1,4 @@
+import { User } from './../../Models/user';
 // import { Component,OnInit,Input } from '@angular/core';
 // import { Router } from '@angular/router';
 // import { UserService } from 'src/app/Services/user.service';
@@ -78,8 +79,9 @@
 // }
 
 import { Component,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
+import { UserLoginComponent } from '../user-login/user-login.component';
 
 
 @Component({
@@ -89,16 +91,18 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class UserDashboardComponent implements OnInit {
   products : any
-
+  user:any
   cartproduct:any
 
   key:string=''
-  constructor(private router:Router , private service:UserService){}
+  constructor(private router:Router , private service:UserService,private route:ActivatedRoute){
+  }
 
 
   ngOnInit(): void {
     let response = this.service.getproducts();
     response.subscribe((data:any)=>this.products=data);
+    
   }
   sortAscending() {
     this.products.sort((a:any, b:any) => a.price - b.price);
@@ -157,4 +161,22 @@ logout(){
   this.service.emptyCart().subscribe();
   this.router.navigate(['/login']);
 }
+updateprofile(){
+  this.route.paramMap.subscribe(params =>{
+    const id=params.get('id');
+  console.log(id)
+  this.router.navigate(['/updateprofile',id])
+  
+
+
+  })}
+  changepassword(){
+    this.route.paramMap.subscribe(params =>{
+      const id=params.get('id');
+    console.log(id)
+    this.router.navigate(['/changepass',id])
+  })
+}
+
+ 
 }

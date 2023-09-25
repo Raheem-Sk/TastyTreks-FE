@@ -37,9 +37,9 @@ export class CartComponent implements OnInit{
     return this.cart.reduce((total, item) => total + item.price, 0);
   }
 
-  checkout() {
+  checkout(gtotal:number) {
     // Implement logic to navigate to the payment gateway
-    this.router.navigate(['/payment-gateway']);
+    this.router.navigate(['/pay',gtotal]);
   }
 
   emptyCart() {

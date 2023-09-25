@@ -9,6 +9,7 @@ import { UserRegistration } from '../Models/user';
   providedIn: 'root',
 })
 export class UserService {
+  
   private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
@@ -16,7 +17,7 @@ export class UserService {
   registerUser(userRegistration: UserRegistration): Observable<void> {
     console.log("working")
     const registrationUrl = `${this.baseUrl}/register`;
-    return this.http.post<void>(registrationUrl, userRegistration);
+    return this.http.post<any>(registrationUrl, userRegistration);
 
   }
 
@@ -25,6 +26,10 @@ export class UserService {
     return this.http.post(loginUrl, userLogin);
   }
 
+  getuserbyid(id: any) {
+    const loginUrl = `${this.baseUrl}/user/`+id;
+    return this.http.get(loginUrl);
+  }
   public getproducts(){
     return this.http.get("http://localhost:8080/product/allproducts");
     }
@@ -44,10 +49,17 @@ export class UserService {
   }
   public addtocart(data:any){
     console.log(data.id)
-    return this.http.post("http://localhost:8080/Cart/Add",data)
+    return this.http.post("http://localhost:8080/Cart/Add",data);
     }
 
 public emptyCart(){
   return this.http.delete('http://localhost:8080/Cart/deleteAll');
 }
+public updateUser(id:number,user:any){
+  return this.http.put('http://localhost:8080/update/'+id,user);
+}
+public changepass(id:number,password:any){
+  return this.http.put('http://localhost:8080/changepassword/'+id,password);
+}
+
 }

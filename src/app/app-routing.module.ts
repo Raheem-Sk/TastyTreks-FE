@@ -9,11 +9,14 @@ import { AdminDashboardComponent } from './Components/admindashboard/admindashbo
 import { AddProductComponent } from './Components/addproduct/addproduct.component';
 import { UpdateProductComponent } from './Components/updateproduct/updateproduct.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { PaymentGatewayComponent } from './Components/payment-gateway/payment-gateway.component';
+import { UserupdateComponent } from './Components/userupdate/userupdate.component';
+import { PasswordchangeComponent } from './Components/passwordchange/passwordchange.component';
 
 
 const routes: Routes = [
   { path: 'register', component: UserRegistrationComponent },
-  {path : 'userhome', component: UserDashboardComponent},
+  {path : 'userhome/:id', component: UserDashboardComponent},
   { path: 'login', component: UserLoginComponent },
   { path: 'admin', component: AdminComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,6 +24,12 @@ const routes: Routes = [
   {path: 'addproduct' , component:AddProductComponent},
   {path: 'updateproduct/:id' , component:UpdateProductComponent},
   {path:'header', component: HeaderComponent},
+  {path:'pay/:gtotal', component: PaymentGatewayComponent},
+  {path: 'updateprofile/:id' , component:UserupdateComponent},
+  {path: 'changepass/:id' , component:PasswordchangeComponent},
+
+
+
   { path:'cart',component:CartComponent}
 ];
 

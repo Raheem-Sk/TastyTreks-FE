@@ -12,14 +12,16 @@ export class UserLoginComponent {
   
   constructor(private userService: UserService , private router: Router) {}
   message:any = ''
-
+  user:any
   loginUser() {
     this.userService.loginUser(this.userLogin).subscribe(
-      (response) => {
-
-        this.router.navigate(['/userhome']);
-        console.log('Login successful', response);
-
+      (data: any) => {
+        this.user = data;
+        // localStorage.setItem('userObject', JSON.stringify(data));
+        console.log('Login successful', this.user.userID);
+        const id = this.user.userID;
+        this.router.navigate(['/userhome',id]);
+        
       },
       (error) => {
         
@@ -28,5 +30,8 @@ export class UserLoginComponent {
 
       }
     );
+    
+    console
   }
+
 }

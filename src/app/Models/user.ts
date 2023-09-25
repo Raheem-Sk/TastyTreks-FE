@@ -1,12 +1,23 @@
-export class UserRegistration {
-  userName: string | undefined;
-  emailId: string | undefined;
-  password: string | undefined;
-  mobile: string | undefined;
-  address: string | undefined;
+export class User {
+  id:number = 0;
+  userName: any;
+  emailId: any;
+  password: any;
+  mobile: any;
+  address: any;
 }
 
 export class UserLogin {
-  emailId: string | undefined;
-  password: string | undefined;
+  
+  emailId: string ='';
+  password: string ='';
+  
+}
+
+export class UserRegistration {
+  userName: string ='';
+  emailId: string ='';
+  password: string ='';
+  mobile: number=0;
+  address: string ='';
 }

@@ -20,6 +20,8 @@ import { CommonModule } from '@angular/common';
 import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
 import { UpdateProductComponent } from './Components/updateproduct/updateproduct.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { UserupdateComponent } from './Components/userupdate/userupdate.component';
+import { PasswordchangeComponent } from './Components/passwordchange/passwordchange.component';
 
 
 
@@ -40,6 +42,8 @@ import { CartComponent } from './Components/cart/cart.component';
     UserDashboardComponent,
     UpdateProductComponent,
     CartComponent,
+    UserupdateComponent,
+    PasswordchangeComponent,
   ],
   imports: [
     BrowserModule,
