@@ -24,13 +24,13 @@ const routes: Routes = [
   {path: 'addproduct' , component:AddProductComponent},
   {path: 'updateproduct/:id' , component:UpdateProductComponent},
   {path:'header', component: HeaderComponent},
-  {path:'pay/:gtotal', component: PaymentGatewayComponent},
+  {path:'pay/:gtotal/:id', component: PaymentGatewayComponent},
   {path: 'updateprofile/:id' , component:UserupdateComponent},
   {path: 'changepass/:id' , component:PasswordchangeComponent},
 
 
 
-  { path:'cart',component:CartComponent}
+  { path:'cart/:id',component:CartComponent}
 ];
 
 @NgModule({

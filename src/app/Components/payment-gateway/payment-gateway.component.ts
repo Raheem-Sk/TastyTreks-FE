@@ -1,6 +1,8 @@
+import { User } from './../../Models/user';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/Services/product.service';
+import { UserService } from 'src/app/Services/user.service';
 import { WalletService } from 'src/app/Services/wallet.service';
 
 @Component({
@@ -9,20 +11,34 @@ import { WalletService } from 'src/app/Services/wallet.service';
   styleUrls: ['./payment-gateway.component.css'],
 })
 export class PaymentGatewayComponent implements OnInit {
-  walletBalance: number = 0;
+  walletBalance: any;
   paymentAmount: any;
   paymentStatus: string = '';
-  product: any;
+  user:any
+  id:any
 
-  constructor(private walletService: WalletService,private route:ActivatedRoute,private service:ProductService) {}
+  constructor(private walletService: WalletService,private route:ActivatedRoute,private service:UserService,private router:Router) {}
   
   ngOnInit() {
-    // Initialize wallet balance from the service
-    this.walletBalance = this.walletService.getBalance();
     this.route.paramMap.subscribe(params =>{
       this.paymentAmount=params.get('gtotal');
+      this.id=params.get('id');
+      console.log(this.id)
 
-    })
+      this.service.getuserbyid(this.id).subscribe(
+        (data: any) => {
+          this.user = data;
+          this.walletBalance=this.user.wallet
+          // console.log(data.wallet)
+      
+
+
+      })})
+
+
+
+
+
   }
 
   rechargeWallet(amount: number): void {
@@ -31,17 +47,45 @@ export class PaymentGatewayComponent implements OnInit {
   }
 
   makePayment(): void {
-    if (this.walletService.deductFromWallet(this.paymentAmount)) {
-      // Payment successful
-      this.paymentStatus = 'Payment Confirmed. Redirecting to Dashboard...';
-      setTimeout(() => {
-        // Redirect to the user dashboard after a 4-second delay
-        // Replace '/user-dashboard' with the actual route to your user dashboard
-        window.location.href = '/user-dashboard';
-      }, 4000);
-    } else { 
+
+  if(this.walletBalance>this.paymentAmount){
+      this.walletBalance=this.walletBalance-this.paymentAmount;
+         console.log(this.walletBalance);
+          this.service.updatewallet(this.walletBalance,this.id).subscribe();
+          this.paymentStatus = 'Payment Confirmed. Redirecting to Dashboard...';
+          this.service.emptyCart().subscribe();
+          setTimeout(() => {
+          // window.location.href = '/userhome',this.id;
+          this.router.navigate(['/userhome',this.id])
+        }, 4000);
+
+
+}
+else { 
       // Insufficient balance
       this.paymentStatus = 'Insufficient balance for this payment.';
     }
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 }

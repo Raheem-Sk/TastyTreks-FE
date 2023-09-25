@@ -11,18 +11,19 @@
 
 /* Style for the payment container */
 .payment-container {
-  border: 1px solid #ddd;
+  border: 1px solid #14c9cc;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  margin: 20px auto;
+  margin: 150px auto;
   max-width: 400px;
 }
 
 
 /* Style for the Wallet Balance heading */
 .payment-container h2 {
+  margin-top: 35%;
   font-size: 20px;
   color: #333;
   margin-bottom: 10px;

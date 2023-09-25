@@ -5,6 +5,7 @@ export class User {
   password: any;
   mobile: any;
   address: any;
+  wallet:any;
 }
 
 export class UserLogin {

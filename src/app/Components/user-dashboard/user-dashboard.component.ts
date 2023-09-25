@@ -177,6 +177,12 @@ updateprofile(){
     this.router.navigate(['/changepass',id])
   })
 }
+gotocart(){
+  this.route.paramMap.subscribe(params =>{
+    const id=params.get('id');
+  console.log(id)
+  this.router.navigate(['/cart',id])
 
+})}
  
 }

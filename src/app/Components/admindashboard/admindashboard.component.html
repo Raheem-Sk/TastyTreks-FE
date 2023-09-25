@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" routerLinkActive="false">TASTYTREKS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,6 +46,95 @@
 
   </div>
 
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Cuisines</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Offers</th>
+        <th>Availability</th>
+        <th>Imagepath</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let product of adminproducts">
+        <td>{{product.name}}</td>
+        <td>{{product.cuisines}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.offers}}</td>
+        <td>{{product.avail}}</td>
+        <td>{{product.imagepath}}</td>
+        <td>
+          <button (click)="updateProduct(product.id)"  class="btn btn-sm btn-primary m-1">Update</button>
+          <button (click)="deleteProduct(product.id)" class="btn btn-sm btn-danger m-1">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLinkActive="false">TASTYTREKS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" style="cursor: pointer; " (click)="Back()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer; " (click)="india()">Indian</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer; " (click)="china()">Chainese</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer; " (click)="korea()">Korean</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer; " (click)="italy()">Italian</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer; " (click)="japan()">Japanese</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Sort by
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" style="cursor: pointer;" (click)="sortAscending()">Price Low-High</a></li>
+            <li><a class="dropdown-item" style="cursor: pointer;" (click)="sortDescending()">Price High-Low</a></li>
+            <li><a class="dropdown-item" style="cursor: pointer;" (click)="sortItemsByName()">A to Z</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" name="key" [(ngModel)]="key" aria-label="Search">
+        <button class="btn btn-success" (click)="searchbyname(key)">Search</button>
+      </form>
+      <div style="padding: 20px;">
+        <button class="btn btn-danger"  routerLink="/admin">Logout</button>
+      </div>
+      </div>
+      </div>
+      </nav>
+      
+<div class="container mt-4">
+  <div class="container mt-4">
+    <h1 class="text-center">Product List</h1>
+    <button type="button" class="btn btn-secondary m-1" [routerLink]="['/addproduct']">Add Product</button>
+  </div>
   <table class="table table-striped mt-3">
     <thead>
       <tr>

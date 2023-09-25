@@ -10,6 +10,7 @@ import { UserRegistration } from '../Models/user';
 })
 export class UserService {
   
+  
   private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
@@ -28,8 +29,19 @@ export class UserService {
 
   getuserbyid(id: any) {
     const loginUrl = `${this.baseUrl}/user/`+id;
+    console.log(id);
     return this.http.get(loginUrl);
   }
+
+  updatewallet(walletBalance: number,id:number) {
+    console.log(id);
+
+    return this.http.put("http://localhost:8080/wallet/"+id,walletBalance);
+  }
+
+
+
+
   public getproducts(){
     return this.http.get("http://localhost:8080/product/allproducts");
     }
