@@ -19,6 +19,9 @@ import { AddProductComponent } from './Components/addproduct/addproduct.componen
 import { CommonModule } from '@angular/common';
 import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
 import { UpdateProductComponent } from './Components/updateproduct/updateproduct.component';
+import { CartComponent } from './Components/cart/cart.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { UpdateProductComponent } from './Components/updateproduct/updateproduct
     AdminDashboardComponent,
     AddProductComponent,
     UserDashboardComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

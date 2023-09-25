@@ -1,4 +1,4 @@
-import { Products } from './../Models/products';
+// import { Products } from './../Models/products';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -39,8 +39,15 @@ export class UserService {
 
   }
 
+  public productById(id:number){
+    return this.http.get("http://localhost:8080/product/search/"+id);
+  }
+  public addtocart(data:any){
+    console.log(data.id)
+    return this.http.post("http://localhost:8080/Cart/Add",data)
+    }
 
-
-
-
+public emptyCart(){
+  return this.http.delete('http://localhost:8080/Cart/deleteAll');
+}
 }

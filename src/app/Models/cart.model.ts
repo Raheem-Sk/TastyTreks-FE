@@ -1,10 +1,8 @@
-// import { Product } from "./product";
+import { Products } from "./products";
 
-// export class Cart{
-//     id:number;
-//     quantity:number;
-//     price:number;
-//     product:Product;
-// }
-
-
+export class Cart{
+    id!:number;
+    quantity!:number;
+    price!:number;
+    product!:Products;
+}

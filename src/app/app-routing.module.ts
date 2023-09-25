@@ -8,6 +8,7 @@ import { HeaderComponent } from './Components/header/header.component';
 import { AdminDashboardComponent } from './Components/admindashboard/admindashboard.component';
 import { AddProductComponent } from './Components/addproduct/addproduct.component';
 import { UpdateProductComponent } from './Components/updateproduct/updateproduct.component';
+import { CartComponent } from './Components/cart/cart.component';
 
 
 const routes: Routes = [
@@ -19,8 +20,8 @@ const routes: Routes = [
   {path: 'admindashboard' , component:AdminDashboardComponent},
   {path: 'addproduct' , component:AddProductComponent},
   {path: 'updateproduct/:id' , component:UpdateProductComponent},
-
-  {path:'header', component: HeaderComponent}
+  {path:'header', component: HeaderComponent},
+  { path:'cart',component:CartComponent}
 ];
 
 @NgModule({

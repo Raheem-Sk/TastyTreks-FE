@@ -20,6 +20,7 @@ export class AdminService {
   }
 
   loginAdmin(loginAdminData: LoginAdminData): Observable<any> {
+    console.log("adminn")
     return this.http.post(`${this.baseUrl}/login`, loginAdminData);
   }
 

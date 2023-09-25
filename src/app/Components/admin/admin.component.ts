@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AdminService } from 'src/app/Services/admin.service';
 
 import { Admin,LoginAdminData } from 'src/app/Models/admin';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -17,7 +18,7 @@ export class AdminComponent {
   showRegistration = false;
   showLogin = false;
 
-  constructor(private adminService: AdminService) {}
+  constructor(private adminService: AdminService,private router:Router) {}
 
   showRegistrationForm() {
     this.showRegistration = true;
@@ -40,12 +41,15 @@ export class AdminComponent {
     );
   }
 
+  msg=''
   loginAdmin() {
     this.adminService.loginAdmin(this.loginAdminData).subscribe(
       (response: any) => {
+        this.router.navigate(['/admindashboard']);
         console.log('Login Successful', response);
       },
       (error: any) => {
+        this.msg='Invalid credentails'
         console.error('Login failed', error);
       }
     );

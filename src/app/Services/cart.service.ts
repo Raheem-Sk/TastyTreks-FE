@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  private apiUrl = 'your_api_url_here'; 
+  private apiUrl = ''; 
 
 
   constructor(private http: HttpClient) {}
@@ -15,9 +15,8 @@ export class CartService {
 
 
 
-  getCartItemList(): Observable<any[]> {
-    const url = `${this.apiUrl}/cart`;
-    return this.http.get<any[]>(url);
+  public getCart() {
+    return this.http.get('http://localhost:8080/Cart/ShowProducts');
   }
 
 
@@ -46,5 +45,9 @@ export class CartService {
   deleteAllCart(): Observable<any> {
     const url = `${this.apiUrl}/cart`;
     return this.http.delete<any>(url);
+  }
+
+  public emptyCart(){
+    return this.http.delete('http://localhost:8080/Cart/deleteAll');
   }
 }
