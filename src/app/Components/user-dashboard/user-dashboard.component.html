@@ -1,6 +1,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
+    <img class="image" src="../../../assets/TTlogo.png">
     <a class="navbar-brand" routerLinkActive="false" style="cursor: pointer; ">TASTYTREKS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,7 +15,7 @@
           <a class="nav-link" style="cursor: pointer; " (click)="india()">Indian</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="cursor: pointer; " (click)="china()">Chainese</a>
+          <a class="nav-link" style="cursor: pointer; " (click)="china()">Chinese</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" style="cursor: pointer; " (click)="korea()">Korean</a>
@@ -27,7 +28,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Sort the Products
+           Sort by
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" style="cursor: pointer;" (click)="sortAscending()">Price Low-High</a></li>
@@ -71,12 +72,12 @@
 <div class="col" *ngFor="let p of products">
     <div class="col">
         <div class="card">
-            <img src="..." class="card-img-top" alt="Food items">
+            <img src="{{p.imagepath}}" class="card-img-top" alt="Food items">
          <div class="card-body">
             <h5 class="card-title">{{p.name}}</h5>
             <p class="card-text">{{p.cuisines}}</p><br/>
             <p class="card-text">{{p.description}}</p>
-            <p class="card-text">{{p.price}}</p><p>{{p.offers}}rs off</p> <p> {{p.avail}}</p>
+            <p class="card-text">Rs. {{p.price}}</p><p>{{p.offers}}.rs off</p> <p> {{p.avail}}</p>
             <button class="btn btn-outline-success" (click)="addtocart(p.id)">Add to Cart</button>
     </div>
   </div>

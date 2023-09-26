@@ -31,9 +31,11 @@ export class AdminComponent {
   }
 
   registerAdmin() {
+    this. showLoginForm();
     this.adminService.registerAdmin(this.admin).subscribe(
       (response: any) => {
         console.log('Registration Successful',);
+       
       },
       (error: any) => {
         console.error('Registration failed', error);

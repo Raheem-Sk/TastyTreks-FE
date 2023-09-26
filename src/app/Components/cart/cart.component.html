@@ -42,7 +42,7 @@
 <div class="container">
   <div class="nav">
   <h2>Shopping Cart</h2>
-  <button class="btn btn-primary"style="margin-left:1000px"  routerLink="/userhome/:id">Home</button></div>
+  <button class="btn btn-primary"style="margin-left:1000px"  (click)="home()">Home</button></div>
   <div class="cart-box">
     <table class="table table-bordered">
       <thead>
@@ -57,7 +57,7 @@
       <tbody>
         <tr *ngFor="let item of cart">
           <td>
-            <img src="item.product.imagepath">
+            <img src="{{item.product.imagepath}}">
           </td>
           <td>{{ item.product.name }}</td>
           <td>{{ item.product.price  }}</td>

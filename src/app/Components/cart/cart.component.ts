@@ -74,7 +74,6 @@ export class CartComponent implements OnInit{
   
   incrementQuantity(item: any) {
     // Implement logic to increment item.quantity and update item.total
-    
     item.quantity++;
     item.price = item.quantity * item.product.price;
   }
@@ -108,4 +107,11 @@ export class CartComponent implements OnInit{
     this.router.navigate(['/userhome',this.id])
 
   })}
+
+  home(){
+    this.route.paramMap.subscribe(params =>{
+      this.id=params.get('id');
+      this.router.navigate(['/userhome',this.id])
+  })
+}
 }

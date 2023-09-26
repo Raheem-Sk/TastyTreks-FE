@@ -32,7 +32,11 @@ hr{
   font-size: 36px;
   font-weight: bold;
 }
-
+.image
+{
+  height: 75px;
+  width:175px;
+}
 /*
 .AddProd{
   margin: 10px;
